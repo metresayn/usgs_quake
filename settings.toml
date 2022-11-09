@@ -1,0 +1,24 @@
+# Is required otherwise will override settings.toml config
+# https://dynaconf.readthedocs.io/en/latest/guides/usage.html#merging-existing-values
+dynaconf_merge = true
+
+[logging]
+structured = true
+verbose = true
+
+[api]
+events_query = "https://earthquake.usgs.gov/fdsnws/event/1/query?"
+dataformat = "geojson"
+start_date = "01-01-2017"
+end_date = "31-12-2017"
+limit = 20000
+count_query = "https://earthquake.usgs.gov/fdsnws/event/1/count?starttime={0}&endtime={1}"
+detail_query = "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid={0}&format={1}"
+
+[database]
+database_name = "usgs"
+table_name = "events"
+username = "postgres"
+password = "postgres"
+host = "0.0.0.0"
+port = "5432"
