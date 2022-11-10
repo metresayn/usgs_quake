@@ -1,5 +1,7 @@
 from api import fetch_and_transform_earthquake_property
 from config import settings
+import pytest
+import json
 
 START_DATE = "01-01-2017"
 END_DATE = "01-01-2017"
@@ -24,4 +26,5 @@ def test_dynaconf_settings():
 
 
 def test_retrieve_data_from_api(earthquake_test_data):
-    assert earthquake_test_data.retrieve_data_from_api.status_code == 200
+    test_api_data = earthquake_test_data.retrieve_data_from_api()
+    assert type(test_api_data) == dict

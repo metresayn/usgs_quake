@@ -8,6 +8,10 @@ A python application which loads data from the [api](https://earthquake.usgs.gov
     ```sh
         docker compose up -d
     ```
+- Install poetry using:
+  ```sh
+    curl -sSL https://install.python-poetry.org | python3 -
+  ```
 
 - Setup entrypoint, this script initializes your database and creates the tables required
   ```sh
